@@ -1,0 +1,26 @@
+#include <stdio.h>
+//#include <stdlib.h>
+/* REDEFINITION ERROR: atoi already declared in stdlib.h */
+
+int atoi(char* str) {
+
+	int value = 0;
+	int iter = 0;
+
+	/* loop terminates at null terminating character */
+	while(*(str + iter)) {
+		value = (value * 10) + (*(str + iter) - '0');
+		iter++;
+	}
+
+	return value;
+}
+
+int main() {
+	/* Stack-allocated array, I will be focusing these over the next few projects */
+	char numStr[] = "8675309";
+
+	printf("The numeric string is %s\n", numStr);
+	printf("The integer value of the string is %d\n", atoi(numStr));
+	return 0;
+}

@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+	int* arr;
+	size_t size;
+	size_t capacity;
+} Nums;
+
+void push(Nums* numArr, int num) {
+	if (numArr->capacity == 0) {
+		/* void pointer implicitly converted to int pointer */
+		numArr->arr = malloc(sizeof(int));
+		numArr->capacity = 1;
+	}
+	else if (numArr->size == numArr->capacity) {
+		numArr->arr = realloc(numArr->arr, 2 * numArr->capacity * sizeof(int));
+		numArr->capacity *= 2;
+	}
+
+	*(numArr->arr + numArr->size) = num;
+	numArr->size++;
+}
+
+int pop(Nums* numArr) {
+	numArr->size--;
+	return *(numArr->arr + numArr->size);
+}
+
+void shrinkToFit(Nums* numArr) {
+	numArr->arr = realloc(numArr->arr, numArr->size * sizeof(int));
+	numArr->capacity = numArr->size;
+}
+
+void printNums(Nums* numArr) {
+
+	printf("Values in the array: ");
+
+	for (int i = 0; i < numArr->size; i++) {
+		printf("%d ", *(numArr->arr + i));
+	}
+	printf("\n");
+
+	printf("The size is %d, and the capacity is %d", numArr->size, numArr->capacity);
+	printf("\n");
+}
+
+int main() {
+	Nums numArr = {};
+
+	for (int i = 0; i < 10; i++) {
+		push(&numArr, i + 1);
+		printNums(&numArr);
+	}
+	for (int i = 0; i < 10; i++) {
+
+		printf("Value of %d popped from array\n", pop(&numArr));
+
+		if (i == 5) {
+			shrinkToFit(&numArr);
+		}
+		printNums(&numArr);
+	}
+
+	free(numArr.arr);
+}
