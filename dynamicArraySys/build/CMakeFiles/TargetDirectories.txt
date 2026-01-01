@@ -1,0 +1,5 @@
+/home/atled/dev/dsa/dynamicArraySys/build/CMakeFiles/system.dir
+/home/atled/dev/dsa/dynamicArraySys/build/CMakeFiles/search.dir
+/home/atled/dev/dsa/dynamicArraySys/build/CMakeFiles/sort.dir
+/home/atled/dev/dsa/dynamicArraySys/build/CMakeFiles/edit_cache.dir
+/home/atled/dev/dsa/dynamicArraySys/build/CMakeFiles/rebuild_cache.dir

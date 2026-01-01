@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.31.6)
+project(DynamicArraySystem)
+add_executable(system testSystem.c dynamicArraySys.c)
+add_executable(search testSearch.c dynamicArraySys.c searchAlgos.c)
+add_executable(sort testSort.c dynamicArraySys.c sortAlgos.c)

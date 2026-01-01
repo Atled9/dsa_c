@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,--dependency-file=CMakeFiles/sort.dir/link.d CMakeFiles/sort.dir/testSort.c.o CMakeFiles/sort.dir/dynamicArraySys.c.o CMakeFiles/sort.dir/sortAlgos.c.o -o sort

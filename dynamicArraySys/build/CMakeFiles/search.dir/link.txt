@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,--dependency-file=CMakeFiles/search.dir/link.d CMakeFiles/search.dir/testSearch.c.o CMakeFiles/search.dir/dynamicArraySys.c.o CMakeFiles/search.dir/searchAlgos.c.o -o search
